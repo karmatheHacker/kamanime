@@ -166,7 +166,7 @@ export default function Home() {
     <div className="select-none font-space-mono tracking-tight">
       {!hideHero && (
         <div
-          className="relative flex min-h-[60svh] animate-fade flex-col items-center justify-center gap-x-24 gap-y-11 lg:min-h-[96svh] lg:flex-row"
+          className="relative flex min-h-[60svh] animate-fade flex-col items-center justify-center gap-x-24 gap-y-11 overflow-hidden lg:min-h-[96svh] lg:flex-row"
           style={
             {
               // backgroundImage: `url(${gradient1})`,
@@ -176,7 +176,7 @@ export default function Home() {
           }
         >
           <div
-            className="stroke-text absolute top-[-200px] w-full overflow-hidden text-nowrap text-[8rem] sm:text-[14rem] lg:text-[22rem] text-[#ffffff20]"
+            className="stroke-text absolute top-[-200px] hidden w-full overflow-hidden text-nowrap text-[8rem] sm:text-[14rem] lg:block lg:text-[22rem] text-[#ffffff20]"
             style={{
               opacity: bgOpacity
               // if scrollOpacity is false, then do not change opacity on scroll
@@ -186,7 +186,7 @@ export default function Home() {
             カマニメカマニメ
           </div>
           <div
-            className="stroke-text absolute w-full overflow-hidden text-nowrap text-[8rem] sm:text-[14rem] lg:text-[22rem] text-[#ffffff20]"
+            className="stroke-text absolute hidden w-full overflow-hidden text-nowrap text-[8rem] sm:text-[14rem] lg:block lg:text-[22rem] text-[#ffffff20]"
             style={{
               // opacity: scrollOpacity ? bgOpacity : 1
               opacity: bgOpacity
@@ -195,7 +195,7 @@ export default function Home() {
             KAMANIME KAMANIME KAMANIME
           </div>
           <div
-            className="stroke-text absolute bottom-[-200px] w-full overflow-hidden text-nowrap text-[8rem] sm:text-[14rem] lg:text-[22rem] text-[#ffffff20]"
+            className="stroke-text absolute bottom-[-200px] hidden w-full overflow-hidden text-nowrap lg:block lg:text-[22rem] text-[#ffffff20]"
             style={{
               // opacity: scrollOpacity ? bgOpacity : 1
               opacity: bgOpacity
@@ -342,11 +342,11 @@ export default function Home() {
 
       {/* {status === 'success' && !error && ( */}
       {!error && (
-        <div className="mx-5 mt-8">
-          <div className="mb-2 border-b border-gray-700 pb-1 font-space-mono text-lg font-bold tracking-wider">
+        <div className="mx-2 mt-6 sm:mx-5 sm:mt-8">
+          <div className="mb-2 border-b border-gray-700 pb-1 font-space-mono text-base font-bold tracking-wider sm:text-lg">
             Top Airing Anime
           </div>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-x-4 sm:grid-cols-[repeat(auto-fit,minmax(190px,1fr))]">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5">
             {!isLoading &&
               !error &&
               topAiringAnime?.map((anime) => (
@@ -372,8 +372,8 @@ export default function Home() {
       )}
 
       {!infiniteQueryError && topAnime?.length > 0 && (
-        <div className="mx-5 mt-12">
-          <div className="mb-2 border-b border-gray-700 pb-1 font-space-mono text-lg font-bold tracking-wider">
+        <div className="mx-2 mt-8 sm:mx-5 sm:mt-12">
+          <div className="mb-2 border-b border-gray-700 pb-1 font-space-mono text-base font-bold tracking-wider sm:text-lg">
             Top Anime
           </div>
 
@@ -451,7 +451,7 @@ export default function Home() {
               </div>
             }
           >
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-x-4 sm:grid-cols-[repeat(auto-fit,minmax(190px,1fr))]">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5">
               {topAnime?.map((anime) => {
                 return <AnimeCard key={anime.id + 'topAnime'} data={anime} />
               })}
