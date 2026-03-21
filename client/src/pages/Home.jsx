@@ -255,12 +255,12 @@ export default function Home() {
                   // gradient from left to right black to transparent
                   <div
                     key={anime.id + 'bannerAnime'}
-                    className="relative h-72 cursor-pointer 2xl:h-96"
+                    className="relative h-44 cursor-pointer sm:h-56 lg:h-72 2xl:h-96"
                     onClick={() => navigate(`/anime/${anime.id}`, { state: { data: anime } })}
                   >
                     <div className="mask absolute h-full w-8/12 bg-gradient-to-r from-[#141414] backdrop-blur-md"></div>
                     <div className="absolute ml-5 flex h-full flex-col items-start justify-center gap-y-2 px-2 2xl:gap-y-6">
-                      <div className="line-clamp-1 max-w-xl bg-gradient-to-r from-[#14141480] py-1 text-start text-2xl font-semibold tracking-wider text-white drop-shadow-3xl">
+                      <div className="line-clamp-1 max-w-xl bg-gradient-to-r from-[#14141480] py-1 text-start text-base font-semibold tracking-wider text-white drop-shadow-3xl sm:text-2xl">
                         {anime.title.romaji}
                       </div>
                       <div className="mb-4 line-clamp-1 max-w-2xl text-start text-xs tracking-wider text-white drop-shadow-3xl">
@@ -268,12 +268,12 @@ export default function Home() {
                       </div>
 
                       {anime.description && (
-                        <div className="line-clamp-[9] w-80 text-left text-xs tracking-wide">
+                        <div className="line-clamp-[4] w-[min(20rem,70vw)] text-left text-xs tracking-wide sm:line-clamp-[9]">
                           {HTMLReactParser(anime.description)}
                         </div>
                       )}
 
-                      <div className="flex gap-x-8 border border-[#ffffff70] bg-[#00000050] px-1 py-1 text-xs backdrop-blur-[2px]">
+                      <div className="hidden gap-x-4 border border-[#ffffff70] bg-[#00000050] px-1 py-1 text-xs backdrop-blur-[2px] sm:flex sm:gap-x-8">
                         <div>{anime.episodes || 0} episodes</div>
                         {anime.averageScore && (
                           <div className="flex items-center gap-x-1 tracking-wide">
@@ -293,7 +293,7 @@ export default function Home() {
                     <img
                       src={anime.bannerImage}
                       alt=""
-                      className="h-72 w-full object-cover 2xl:h-96"
+                      className="h-44 w-full object-cover sm:h-56 lg:h-72 2xl:h-96"
                     />
                   </div>
                 ))}
@@ -312,7 +312,7 @@ export default function Home() {
                   </p>
                 </Tooltip>
               </div>
-              <div className="grid animate-fade grid-cols-4">
+              <div className="grid animate-fade grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
                 {animepaheReleases?.data?.slice(0, 8)?.map((ep) => (
                   <AnimepaheEpisodeCard key={ep.id + 'animepaheReleases'} data={ep} />
                 ))}
@@ -331,7 +331,7 @@ export default function Home() {
           <div className="mb-2 ml-5 border-b border-gray-700 pb-1 font-space-mono text-lg font-bold tracking-wider">
             Continue Watching
           </div>
-          <div className="grid animate-fade grid-cols-3">
+          <div className="grid animate-fade grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {currentlyWatching?.slice(0, 3)?.map((anime) => (
               <CurrentlyWatchingCard key={anime.id + 'currentlyWatching'} data={anime} />
             ))}
@@ -345,7 +345,7 @@ export default function Home() {
           <div className="mb-2 border-b border-gray-700 pb-1 font-space-mono text-lg font-bold tracking-wider">
             Top Airing Anime
           </div>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-x-4 overflow-x-visible pl-4">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-x-4 sm:grid-cols-[repeat(auto-fit,minmax(190px,1fr))]">
             {!isLoading &&
               !error &&
               topAiringAnime?.map((anime) => (
@@ -392,12 +392,12 @@ export default function Home() {
                   // gradient from left to right black to transparent
                   <div
                     key={anime.id + 'bannerAnime'}
-                    className="relative h-72 cursor-pointer 2xl:h-96"
+                    className="relative h-44 cursor-pointer sm:h-56 lg:h-72 2xl:h-96"
                     onClick={() => navigate(`/anime/${anime.id}`, { state: { data: anime } })}
                   >
                     <div className="mask absolute h-full w-8/12 bg-gradient-to-r from-[#141414] backdrop-blur-md"></div>
                     <div className="absolute ml-5 flex h-full flex-col items-start justify-center gap-y-2 px-2 2xl:gap-y-6">
-                      <div className="line-clamp-1 max-w-xl bg-gradient-to-r from-[#14141480] py-1 text-start text-2xl font-semibold tracking-wider text-white drop-shadow-3xl">
+                      <div className="line-clamp-1 max-w-xl bg-gradient-to-r from-[#14141480] py-1 text-start text-base font-semibold tracking-wider text-white drop-shadow-3xl sm:text-2xl">
                         {anime.title.romaji}
                       </div>
                       <div className="mb-4 line-clamp-1 max-w-2xl text-start text-xs tracking-wider text-white drop-shadow-3xl">
@@ -405,12 +405,12 @@ export default function Home() {
                       </div>
 
                       {anime.description && (
-                        <div className="line-clamp-[9] w-80 text-left text-xs tracking-wide">
+                        <div className="line-clamp-[4] w-[min(20rem,70vw)] text-left text-xs tracking-wide sm:line-clamp-[9]">
                           {HTMLReactParser(anime.description)}
                         </div>
                       )}
 
-                      <div className="flex gap-x-8 border border-[#ffffff70] bg-[#00000050] px-1 py-1 text-xs backdrop-blur-[2px]">
+                      <div className="hidden gap-x-4 border border-[#ffffff70] bg-[#00000050] px-1 py-1 text-xs backdrop-blur-[2px] sm:flex sm:gap-x-8">
                         <div>{anime.episodes || 0} episodes</div>
                         {anime.averageScore && (
                           <div className="flex items-center gap-x-1 tracking-wide">
@@ -430,7 +430,7 @@ export default function Home() {
                     <img
                       src={anime.bannerImage}
                       alt=""
-                      className="h-72 w-full object-cover 2xl:h-96"
+                      className="h-44 w-full object-cover sm:h-56 lg:h-72 2xl:h-96"
                     />
                   </div>
                 ))}
@@ -450,7 +450,7 @@ export default function Home() {
               </div>
             }
           >
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-x-4 overflow-x-visible pl-4">
+            <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-x-4 sm:grid-cols-[repeat(auto-fit,minmax(190px,1fr))]">
               {topAnime?.map((anime) => {
                 return <AnimeCard key={anime.id + 'topAnime'} data={anime} />
               })}

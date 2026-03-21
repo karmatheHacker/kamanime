@@ -182,24 +182,24 @@ export default function AnimePage() {
             <div className="animate-fade-down">
               <img
                 src={data?.bannerImage}
-                className="absolute top-7 z-0 h-72 w-full object-cover opacity-70 blur-3xl brightness-75 saturate-150 2xl:h-96"
+                className="absolute top-7 z-0 h-44 w-full object-cover opacity-70 blur-3xl brightness-75 saturate-150 sm:h-56 lg:h-72 2xl:h-96"
                 alt=""
               />
             </div>
           )}
           <img
             src={data?.bannerImage}
-            className="z-10 h-72 w-full animate-fade-down object-cover brightness-90 transition-all ease-in-out 2xl:h-96"
+            className="z-10 h-44 w-full animate-fade-down object-cover brightness-90 transition-all ease-in-out sm:h-56 lg:h-72 2xl:h-96"
             alt=""
           />
         </div>
       )}
       <div className="z-30 mx-auto animate-fade px-6 py-4 lg:container">
-        <div className="flex justify-between gap-x-7">
+        <div className="flex flex-col gap-y-4 lg:flex-row lg:justify-between lg:gap-x-7">
           <img
             src={data?.coverImage.extraLarge}
             alt=""
-            className={`duration-400 relative ${data?.bannerImage ? 'bottom-[4rem]' : ''} shadow-xl drop-shadow-2xl h-[25rem] w-72 animate-fade-up rounded-md object-cover transition-all ease-in-out`}
+            className={`duration-400 relative ${data?.bannerImage ? 'lg:bottom-[4rem]' : ''} shadow-xl drop-shadow-2xl h-[15rem] w-auto animate-fade-up self-center rounded-md object-cover transition-all ease-in-out sm:h-[20rem] lg:h-[25rem] lg:w-72 lg:self-auto`}
           />
           <div className="flex-1 justify-start gap-y-0">
             <p className="font-space-mono text-xl font-medium tracking-wider">

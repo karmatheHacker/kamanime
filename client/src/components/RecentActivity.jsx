@@ -8,7 +8,7 @@ export default function RecentActivity({ data }) {
   const yBottom = useTransform(scrollY, [0, 800], [0, 360])
 
   return (
-    <div className="tripp down relative flex h-[30rem] w-[30rem] min-w-[30rem] scale-75 overflow-hidden md:scale-100">
+    <div className="tripp down relative flex h-[18rem] w-[18rem] min-w-[18rem] scale-100 overflow-hidden sm:h-[24rem] sm:w-[24rem] sm:min-w-[24rem] md:h-[30rem] md:w-[30rem] md:min-w-[30rem]">
       {/* Only render gradients if scrollY is less than 900 */}
       <motion.div className="absolute -top-[16rem] left-0 w-full" style={{ y: yTop }}>
         <div className="flex flex-col">

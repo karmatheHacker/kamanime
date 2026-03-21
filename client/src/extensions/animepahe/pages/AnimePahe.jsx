@@ -68,7 +68,7 @@ function AnimePahe() {
 
   return (
     <div className="h-full">
-      <div className="my-24 px-12">
+      <div className="my-24 px-3 sm:px-6 lg:px-12">
         {infiniteQueryError && (
           <div className="text-red-500">
             Failed to fetch Top Anime : {infiniteQueryError.message}
@@ -108,7 +108,7 @@ function AnimePahe() {
                 </div>
               }
             >
-              <div className="grid animate-fade grid-cols-4">
+              <div className="grid animate-fade grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
                 {latestEps?.map((anime) => {
                   return <AnimepaheEpisodeCard key={anime.id + 'latestEps'} data={anime} />
                 })}
