@@ -68,7 +68,7 @@ function PingButton() {
         Ping Backend
       </Button>
       {status === 'pinging' && <span className="text-[11px] text-[#555] font-space-mono">Pinging…</span>}
-      {status === 'ok' && <span className="text-[11px] text-green-400 font-space-mono">● Online — {serverUrl}</span>}
+      {status === 'ok' && <span className="text-[11px] text-green-400 font-space-mono">● Online</span>}
       {status === 'error' && <span className="text-[11px] text-red-400 font-space-mono">● Offline</span>}
     </div>
   )
