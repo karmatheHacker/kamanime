@@ -125,8 +125,8 @@ export default function Header() {
           </div>
         </Link>
 
-        <DividerVerticalIcon width={20} height={20} color="#ffffff40" className="hidden sm:block" />
-        <div className="hidden sm:flex gap-4">
+        <DividerVerticalIcon width={20} height={20} color="#ffffff40" className="hidden md:block" />
+        <div className="hidden md:flex gap-4">
           <Button color="gray" variant="ghost" size={'1'} onClick={() => navigate(-1)}>
             <ArrowLeftIcon className="my-1" width={16} height={16} />
           </Button>
@@ -134,14 +134,14 @@ export default function Header() {
             <ArrowRightIcon className="my-1" width={16} height={16} />
           </Button>
         </div>
-        <DividerVerticalIcon width={20} height={20} color="#ffffff40" className="hidden sm:block" />
-        <Link to="/newreleases" className="hidden sm:block">
+        <DividerVerticalIcon width={20} height={20} color="#ffffff40" className="hidden md:block" />
+        <Link to="/newreleases" className="hidden md:block">
           <Button className="nodrag" color="gray" variant="soft" size={'1'}>
             <div className="font-space-mono text-[.8rem]">New</div>
           </Button>
         </Link>
         <Button
-          className="nodrag hidden sm:flex"
+          className="nodrag hidden md:flex"
           size="1"
           color="gray"
           variant="soft"
@@ -151,7 +151,7 @@ export default function Header() {
         </Button>
 
         <Button
-          className="nodrag hidden sm:flex"
+          className="nodrag hidden md:flex"
           size="1"
           color="gray"
           variant="soft"
@@ -183,12 +183,12 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="nodrag mx-1 sm:mx-5 flex-1 max-w-[200px] sm:max-w-none sm:w-2/6">{animepahe ? <AnimePaheSearchBar /> : <SearchBar />}</div>
-      <div className="nodrag mr-0 sm:mr-4 flex items-center justify-center gap-x-2 sm:gap-x-4">
-        <Button color="gray" variant="soft" size={'1'} onClick={() => navigate('/downloads')}>
+      <div className="nodrag mx-1 md:mx-5 flex-1 max-w-[160px] md:max-w-none md:w-2/6">{animepahe ? <AnimePaheSearchBar /> : <SearchBar />}</div>
+      <div className="nodrag mr-0 md:mr-4 flex items-center justify-center gap-x-2 md:gap-x-4">
+        <Button className="hidden md:flex" color="gray" variant="soft" size={'1'} onClick={() => navigate('/downloads')}>
           <DownloadIcon />
         </Button>
-        <DownloadMeter />
+        <div className="hidden md:block"><DownloadMeter /></div>
 
         {true && (
           <DropdownMenu.Root className="nodrag" modal={false}>

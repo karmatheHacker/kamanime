@@ -62,7 +62,7 @@ export default function AnimeCard({ data }) {
 
   return (
     <div
-      className="relative my-4 w-fit"
+      className="relative my-4 w-full"
       onMouseOver={() => setCard(1)}
       onMouseLeave={() => {
         setCard(0)
@@ -74,17 +74,17 @@ export default function AnimeCard({ data }) {
       {
         <div
           onClick={() => handleClick()}
-          className={`group relative flex w-[10.6rem] animate-fade cursor-pointer flex-col items-center justify-center gap-y-2 transition-all ease-in-out ${hoverCard ? '' : 'hover:scale-110'}`}
+          className={`group relative flex w-full animate-fade cursor-pointer flex-col items-center justify-center gap-y-2 transition-all ease-in-out ${hoverCard ? '' : 'hover:scale-110'}`}
         >
-          <div className="relative z-10">
+          <div className="relative z-10 w-full">
             {imageLoading && (
-              <Skeleton className="duration-400 absolute top-0 z-10 h-60 w-[10.6rem] animate-fade rounded-sm object-cover transition-all ease-in-out"></Skeleton>
+              <Skeleton className="duration-400 absolute top-0 z-10 aspect-[2/3] w-full animate-fade rounded-sm object-cover transition-all ease-in-out"></Skeleton>
             )}
 
             <img
               src={data?.coverImage?.extraLarge}
               alt=""
-              className={`duration-400 z-10 h-60 w-[10.6rem] animate-fade rounded-sm object-cover transition-all ease-in-out ${imageLoading ? 'opacity-0' : 'opacity-100'}`}
+              className={`duration-400 z-10 aspect-[2/3] w-full animate-fade rounded-sm object-cover transition-all ease-in-out ${imageLoading ? 'opacity-0' : 'opacity-100'}`}
               onLoad={() => setImageLoading(false)}
             />
           </div>
@@ -139,7 +139,7 @@ export default function AnimeCard({ data }) {
             <img
               src={data?.coverImage?.extraLarge}
               alt=""
-              className="absolute top-0 z-0 h-60 w-40 rounded-md object-cover opacity-0 blur-2xl contrast-200 saturate-200 transition-all duration-500 ease-in-out group-hover:opacity-70"
+              className="absolute top-0 z-0 aspect-[2/3] w-full rounded-md object-cover opacity-0 blur-2xl contrast-200 saturate-200 transition-all duration-500 ease-in-out group-hover:opacity-70"
             />
           )}
         </div>
