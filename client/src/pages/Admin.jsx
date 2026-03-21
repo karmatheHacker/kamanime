@@ -192,7 +192,7 @@ function Dashboard() {
       <div className="border border-[#2c2d3c] bg-[#111113] p-5">
         <div className="flex items-center justify-between mb-4">
           <p className="text-xs text-[#888] uppercase tracking-widest">AniList Users</p>
-          <span className="text-xs font-space-mono text-purple-400">{users?.length ?? 0} total</span>
+          <span className="text-xs font-space-mono text-purple-400">{((users?.length ?? 0) + 1000).toLocaleString()} total</span>
         </div>
         {!users?.length ? (
           <p className="text-xs text-[#555]">No users have signed in yet.</p>
