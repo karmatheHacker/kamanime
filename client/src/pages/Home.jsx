@@ -166,7 +166,7 @@ export default function Home() {
     <div className="select-none font-space-mono tracking-tight">
       {!hideHero && (
         <div
-          className="relative flex min-h-[96svh] animate-fade flex-col items-center justify-center gap-x-24 gap-y-11 lg:flex-row"
+          className="relative flex min-h-[60svh] animate-fade flex-col items-center justify-center gap-x-24 gap-y-11 lg:min-h-[96svh] lg:flex-row"
           style={
             {
               // backgroundImage: `url(${gradient1})`,
@@ -204,23 +204,21 @@ export default function Home() {
             七転び八起き
           </div>
 
-          <div className="my-12 flex h-full w-10/12 flex-col items-center justify-start gap-y-1 p-3 sm:w-8/12 lg:w-2/5">
+          <div className="my-12 flex h-full w-full flex-col items-center justify-center gap-y-1 px-6 lg:w-2/5">
             <div className="relative flex flex-col items-center leading-none mb-8">
               <span className="font-bold text-white text-[3rem] sm:text-[4rem] lg:text-[5rem] tracking-tighter drop-shadow-2xl">Kamanime.</span>
               <span className="absolute -bottom-4 text-2xl font-bold text-[#B026FF] drop-shadow-[0_0_10px_rgba(176,38,255,0.8)] opacity-95">カマニメ</span>
             </div>
-            <p className="text-center font-space-mono">
+            <p className="text-center font-space-mono max-w-sm">
               Stream, track, and discover anime — all in one place. Sync your AniList, chat with the community, and watch without the noise.
             </p>
           </div>
 
-          {/* <img
-          src={zenshin1}
-          alt="zenshin"
-          className="drop-shadow-lg h-48 object-scale-down sm:h-64 md:h-80 lg:h-96"
-        /> */}
-
-          {recentActivity && <RecentActivity data={Object.values(recentActivity).slice(0, 9)} />}
+          {recentActivity && (
+            <div className="hidden lg:block">
+              <RecentActivity data={Object.values(recentActivity).slice(0, 9)} />
+            </div>
+          )}
         </div>
       )}
 
