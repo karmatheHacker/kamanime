@@ -223,7 +223,14 @@ function ProfileCard({ target, myId, myName, myAvatar, onClose, onOpenDM }) {
           ? <img src={target.avatar} className="w-16 h-16 rounded-full object-cover ring-2 ring-[#1a1a22]" alt={target.name} />
           : <div className="w-16 h-16 rounded-full bg-[#1e1e28] flex items-center justify-center text-2xl text-[#555]">{target.name[0]?.toUpperCase()}</div>
         }
-        <span className="text-[13px] text-white font-bold">{target.name}</span>
+        <a
+          href={`https://anilist.co/user/${target.name}/`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[13px] text-white font-bold hover:text-purple-400 transition-colors"
+        >
+          {target.name}
+        </a>
 
         {blocked && (
           <span className="text-[10px] text-red-400/70 uppercase tracking-widest">Blocked</span>

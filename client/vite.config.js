@@ -11,6 +11,12 @@ export default defineConfig({
         target: 'http://localhost:64621',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
+      },
+      '/anilist-proxy': {
+        target: 'https://graphql.anilist.co',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/anilist-proxy/, ''),
+        secure: true
       }
     }
   }

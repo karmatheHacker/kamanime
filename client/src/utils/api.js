@@ -1,7 +1,9 @@
 import encUrls from '../lib/utils.js'
 const BASE_URL_JIKAN = 'https://api.jikan.moe/v4'
 const BASE_URL_NYAA = encUrls.nyaaApi
-export const BASE_URL_ANILIST = 'https://graphql.anilist.co'
+export const BASE_URL_ANILIST = import.meta.env.DEV
+  ? '/anilist-proxy'
+  : 'https://graphql.anilist.co'
 const BASE_URL_ANIZIP = encUrls.zenshinSupabase
 const TOSHO = encUrls.tosho
 
