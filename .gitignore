@@ -16,9 +16,6 @@ client/build/
 .env.development
 .env.production
 
-# Convex generated files (auto-generated on deploy)
-client/convex/_generated/
-
 # Logs
 *.log
 npm-debug.log*
