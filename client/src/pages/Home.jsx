@@ -212,6 +212,9 @@ export default function Home() {
             <p className="text-center font-space-mono max-w-sm">
               Stream, track, and discover anime — all in one place. Sync your AniList, chat with the community, and watch without the noise.
             </p>
+            <p className="mt-4 text-center text-xs text-[#ffffff40] lg:hidden">
+              For the best experience, view on desktop.
+            </p>
           </div>
 
           {recentActivity && (
