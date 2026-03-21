@@ -53,11 +53,6 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />
       },
       {
-        path: '/auth/callback  ',
-        element: <AnilistAuthCallback />,
-        errorElement: <ErrorPage />
-      },
-      {
         path: '/animepahe',
         element: <AnimePahe />,
         errorElement: <ErrorPage />
