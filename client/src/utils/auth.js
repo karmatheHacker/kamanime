@@ -1,4 +1,4 @@
-export const ANILIST_CLIENT_ID = 37565
+export const ANILIST_CLIENT_ID = 37608
 export const anilistAuthUrl = `https://anilist.co/api/v2/oauth/authorize?client_id=${ANILIST_CLIENT_ID}&response_type=token`
 
 export async function getAnilistProfile(anilistToken) {
