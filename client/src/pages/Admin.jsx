@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { ClerkProvider, SignIn, useUser, SignOutButton } from '@clerk/clerk-react'
 import { useQuery } from 'convex/react'
 import { api } from '../../convex/_generated/api'
@@ -8,8 +9,11 @@ import {
   ActivityLogIcon,
   LockClosedIcon,
   ExitIcon,
-  DotFilledIcon
+  DotFilledIcon,
+  LayersIcon
 } from '@radix-ui/react-icons'
+import axios from 'axios'
+import { useZenshinContext } from '../utils/ContextProvider'
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
@@ -43,6 +47,33 @@ function MiniBar({ value, max, date, uniqueVisitors }) {
   )
 }
 
+function PingButton() {
+  const { serverUrl } = useZenshinContext()
+  const [status, setStatus] = useState(null)
+
+  const ping = async () => {
+    setStatus('pinging')
+    try {
+      const res = await axios.get(`${serverUrl}/ping`)
+      setStatus(res.status === 200 ? 'ok' : 'error')
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  return (
+    <div className="flex items-center gap-3">
+      <Button size="1" variant="soft" color="green" onClick={ping}>
+        <LayersIcon />
+        Ping Backend
+      </Button>
+      {status === 'pinging' && <span className="text-[11px] text-[#555] font-space-mono">Pinging…</span>}
+      {status === 'ok' && <span className="text-[11px] text-green-400 font-space-mono">● Online — {serverUrl}</span>}
+      {status === 'error' && <span className="text-[11px] text-red-400 font-space-mono">● Offline</span>}
+    </div>
+  )
+}
+
 function Dashboard() {
   const stats = useQuery(api.analytics.getStats)
   const users = useQuery(api.users.list)
@@ -65,12 +96,15 @@ function Dashboard() {
             </p>
           </div>
         </div>
-        <SignOutButton>
-          <Button variant="soft" color="red" size="1">
-            <ExitIcon />
-            Logout
-          </Button>
-        </SignOutButton>
+        <div className="flex items-center gap-3">
+          <PingButton />
+          <SignOutButton>
+            <Button variant="soft" color="red" size="1">
+              <ExitIcon />
+              Logout
+            </Button>
+          </SignOutButton>
+        </div>
       </div>
 
       {/* Stat cards */}

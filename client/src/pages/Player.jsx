@@ -136,32 +136,6 @@ export default function Player(query) {
   // log current path
   console.log('Current path:', window.location.pathname)
 
-  const checkBackendRunning = async () => {
-    try {
-      const response = await axios.get(`${serverUrl}/ping`)
-      console.log(response)
-
-      if (response.status === 200) {
-        toast.success('Backend is running', {
-          icon: <LightningBoltIcon height="16" width="16" color="#ffffff" />,
-          description: 'Backend is running on your local machine',
-          classNames: {
-            title: 'text-green-500'
-          }
-        })
-      }
-    } catch (error) {
-      toast.error('Backend is not running', {
-        icon: <ExclamationTriangleIcon height="16" width="16" color="#ffffff" />,
-        description: 'Backend is not running on your local machine',
-        classNames: {
-          title: 'text-rose-500'
-        }
-      })
-
-      console.error('Error checking if the backend is running', error)
-    }
-  }
 
   /* ------------------------------------------------------ */
 
@@ -326,9 +300,6 @@ export default function Player(query) {
             </Button>
             <Button size="1" color="red" variant="soft" onClick={handleRemoveTorrent}>
               Stop and Remove Anime
-            </Button>
-            <Button size="1" color="green" variant="soft" onClick={checkBackendRunning}>
-              Ping Backend
             </Button>
           </div>
         </div>
