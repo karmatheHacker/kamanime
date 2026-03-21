@@ -176,7 +176,7 @@ export default function Home() {
           }
         >
           <div
-            className="stroke-text absolute top-[-200px] w-full overflow-hidden text-nowrap text-[22rem] text-[#ffffff20]"
+            className="stroke-text absolute top-[-200px] w-full overflow-hidden text-nowrap text-[8rem] sm:text-[14rem] lg:text-[22rem] text-[#ffffff20]"
             style={{
               opacity: bgOpacity
               // if scrollOpacity is false, then do not change opacity on scroll
@@ -186,7 +186,7 @@ export default function Home() {
             カマニメカマニメ
           </div>
           <div
-            className="stroke-text absolute w-full overflow-hidden text-nowrap text-[22rem] text-[#ffffff20]"
+            className="stroke-text absolute w-full overflow-hidden text-nowrap text-[8rem] sm:text-[14rem] lg:text-[22rem] text-[#ffffff20]"
             style={{
               // opacity: scrollOpacity ? bgOpacity : 1
               opacity: bgOpacity
@@ -195,7 +195,7 @@ export default function Home() {
             KAMANIME KAMANIME KAMANIME
           </div>
           <div
-            className="stroke-text absolute bottom-[-200px] w-full overflow-hidden text-nowrap text-[22rem] text-[#ffffff20]"
+            className="stroke-text absolute bottom-[-200px] w-full overflow-hidden text-nowrap text-[8rem] sm:text-[14rem] lg:text-[22rem] text-[#ffffff20]"
             style={{
               // opacity: scrollOpacity ? bgOpacity : 1
               opacity: bgOpacity
@@ -204,9 +204,9 @@ export default function Home() {
             七転び八起き
           </div>
 
-          <div className="my-12 flex h-full w-8/12 flex-col items-center justify-start gap-y-1 p-3 lg:w-2/5">
+          <div className="my-12 flex h-full w-10/12 flex-col items-center justify-start gap-y-1 p-3 sm:w-8/12 lg:w-2/5">
             <div className="relative flex flex-col items-center leading-none mb-8">
-              <span className="font-bold text-white text-[5rem] tracking-tighter drop-shadow-2xl">Kamanime.</span>
+              <span className="font-bold text-white text-[3rem] sm:text-[4rem] lg:text-[5rem] tracking-tighter drop-shadow-2xl">Kamanime.</span>
               <span className="absolute -bottom-4 text-2xl font-bold text-[#B026FF] drop-shadow-[0_0_10px_rgba(176,38,255,0.8)] opacity-95">カマニメ</span>
             </div>
             <p className="text-center font-space-mono">

@@ -113,8 +113,8 @@ export default function Header() {
   const animepahe = pathname.includes('/animepahe')
 
   return (
-    <div className="draggable sticky top-0 z-50 flex h-11 items-center justify-between border-[#5a5e6750] bg-[#111113] bg-opacity-60 px-4 py-3 backdrop-blur-md">
-      <div className="nodrag flex items-center justify-center gap-x-2">
+    <div className="draggable sticky top-0 z-50 flex h-11 items-center justify-between border-[#5a5e6750] bg-[#111113] bg-opacity-60 px-3 py-3 backdrop-blur-md">
+      <div className="nodrag flex items-center justify-center gap-x-1 sm:gap-x-2">
         <Link
           className="nodrag hover: font-spaceMono flex w-fit cursor-pointer select-none flex-col items-center justify-center gap-x-2 rounded-sm p-1 text-sm transition-all duration-200 hover:bg-[#70707030]"
           to={'/'}
@@ -125,8 +125,8 @@ export default function Header() {
           </div>
         </Link>
 
-        <DividerVerticalIcon width={20} height={20} color="#ffffff40" />
-        <div className="flex gap-4">
+        <DividerVerticalIcon width={20} height={20} color="#ffffff40" className="hidden sm:block" />
+        <div className="hidden sm:flex gap-4">
           <Button color="gray" variant="ghost" size={'1'} onClick={() => navigate(-1)}>
             <ArrowLeftIcon className="my-1" width={16} height={16} />
           </Button>
@@ -134,14 +134,14 @@ export default function Header() {
             <ArrowRightIcon className="my-1" width={16} height={16} />
           </Button>
         </div>
-        <DividerVerticalIcon width={20} height={20} color="#ffffff40" />
-        <Link to="/newreleases">
+        <DividerVerticalIcon width={20} height={20} color="#ffffff40" className="hidden sm:block" />
+        <Link to="/newreleases" className="hidden sm:block">
           <Button className="nodrag" color="gray" variant="soft" size={'1'}>
             <div className="font-space-mono text-[.8rem]">New</div>
           </Button>
         </Link>
         <Button
-          className="nodrag"
+          className="nodrag hidden sm:flex"
           size="1"
           color="gray"
           variant="soft"
@@ -151,14 +151,12 @@ export default function Header() {
         </Button>
 
         <Button
-          className="nodrag"
+          className="nodrag hidden sm:flex"
           size="1"
           color="gray"
           variant="soft"
           onClick={() => navigate('/anilist')}
-          style={{
-            padding: '0 .4rem'
-          }}
+          style={{ padding: '0 .4rem' }}
         >
           <AniListLogo style="h-5 w-5" />
         </Button>
@@ -185,8 +183,8 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="nodrag mx-5 w-2/6">{animepahe ? <AnimePaheSearchBar /> : <SearchBar />}</div>
-      <div className="nodrag mr-36 flex items-center justify-center gap-x-4">
+      <div className="nodrag mx-1 sm:mx-5 flex-1 max-w-[200px] sm:max-w-none sm:w-2/6">{animepahe ? <AnimePaheSearchBar /> : <SearchBar />}</div>
+      <div className="nodrag mr-0 sm:mr-4 flex items-center justify-center gap-x-2 sm:gap-x-4">
         <Button color="gray" variant="soft" size={'1'} onClick={() => navigate('/downloads')}>
           <DownloadIcon />
         </Button>

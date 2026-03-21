@@ -687,7 +687,7 @@ export default function ChatPanel() {
   return (
     <>
       {chatOpen && (
-        <div className="fixed top-11 right-0 z-[99] w-[380px] h-[580px] bg-[#0d0d0f] border border-[#1a1a22] flex flex-col font-space-mono shadow-2xl shadow-black/60">
+        <div className="fixed top-11 right-0 z-[99] w-full sm:w-[380px] h-[calc(100svh-2.75rem)] sm:h-[580px] bg-[#0d0d0f] border border-[#1a1a22] flex flex-col font-space-mono shadow-2xl shadow-black/60">
 
           {/* Header */}
           <div className="flex items-center justify-between px-3 py-2 border-b border-[#1a1a22] shrink-0">
