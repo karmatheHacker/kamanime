@@ -1,0 +1,32 @@
+# Environment variables — never commit secrets
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.staging
+
+# Convex deployment config (contains deployment name/URL)
+# Add CONVEX_DEPLOYMENT and VITE_CONVEX_URL to your CI/CD secrets instead
+# .env.local is already listed above
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

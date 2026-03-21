@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build output
+client/dist/
+client/build/
+
+# Environment variables — never commit secrets
+.env
+**/.env
+.env.local
+**/.env.local
+.env.*.local
+**/.env.*.local
+.env.development
+.env.production
+
+# Convex generated files (auto-generated on deploy)
+client/convex/_generated/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Server local data
+server/settings.json
+server/downloads/
