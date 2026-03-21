@@ -294,11 +294,11 @@ export default function Player(query) {
   }
 
   return (
-    <div className="mb-32 flex items-center justify-center px-8 font-space-mono">
+    <div className="mb-32 flex items-center justify-center px-2 font-space-mono sm:px-8">
       <div className="w-full">
         {videoSrc && (
           <div className="flex w-full justify-center">
-            <div className="mx-0 aspect-video w-4/6 lg2:mx-32">
+            <div className="mx-0 aspect-video w-full sm:w-4/6 lg2:mx-32">
               <Plyr {...plyrProps} ref={ref} />
             </div>
           </div>

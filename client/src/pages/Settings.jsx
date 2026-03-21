@@ -134,7 +134,7 @@ export default function Settings() {
   console.log(settings)
 
   return (
-    <div className="w-full animate-fade select-none px-16 py-10 font-space-mono animate-duration-500">
+    <div className="w-full animate-fade select-none px-4 py-6 font-space-mono animate-duration-500 sm:px-16 sm:py-10">
       <div className="mb-8 border-b border-gray-700 pb-2 font-semibold tracking-wider text-[#b5b5b5ff]">
         Settings
       </div>

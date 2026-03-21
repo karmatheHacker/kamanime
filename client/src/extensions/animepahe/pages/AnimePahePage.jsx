@@ -187,14 +187,12 @@ function AnimePahePage() {
           />
         </div>
       )}
-      <div className="z-30 mx-auto animate-fade px-6 py-4 lg:container">
-        <div className="flex justify-between gap-x-7">
+      <div className="z-30 mx-auto animate-fade px-3 py-4 sm:px-6 lg:container">
+        <div className="flex flex-col gap-y-4 lg:flex-row lg:justify-between lg:gap-x-7">
           <img
             src={data?.coverImage.extraLarge || parseAnimepaheImage(animepaheData.cover)}
-            // src={data?.coverImage.extraLarge}
             alt=""
-            className={`duration-400 relative ${data?.bannerImage ? 'bottom-[4rem]' : ''} shadow-xl drop-shadow-2xl h-[25rem] w-72 animate-fade-up rounded-md object-cover transition-all ease-in-out`}
-            // className={`duration-400 relative h-96 w-72 animate-fade rounded-md object-cover transition-all ease-in-out`}
+            className={`duration-400 relative ${data?.bannerImage ? 'lg:bottom-[4rem]' : ''} shadow-xl drop-shadow-2xl h-[15rem] w-auto animate-fade-up self-center rounded-md object-cover transition-all ease-in-out sm:h-[20rem] lg:h-[25rem] lg:w-72 lg:self-auto`}
           />
           <div className="flex-1 justify-start gap-y-0">
             <p className="font-space-mono text-xl font-medium tracking-wider">
@@ -307,7 +305,7 @@ function AnimePahePage() {
                 className="my-2 h-fit cursor-pointer transition-all duration-200 ease-in-out"
                 onClick={() => navigate(`/anime/${relation?.node?.id}`)}
               >
-                <div className="flex w-[25rem] font-space-mono text-xs text-[#dcdcdc]">
+                <div className="flex w-full font-space-mono text-xs text-[#dcdcdc]">
                   <img
                     src={relation?.node?.coverImage?.medium}
                     alt=""

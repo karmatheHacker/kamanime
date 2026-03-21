@@ -29,7 +29,7 @@ function Downloads() {
   const currAnime = settings?.currentAnime || null
 
   return (
-    <div className="mx-9 mt-8 font-space-mono tracking-wide">
+    <div className="mx-3 mt-4 font-space-mono tracking-wide sm:mx-9 sm:mt-8">
       <div className="mb-2 border-b border-gray-700 pb-1 font-space-mono text-lg font-bold tracking-wider flex items-center justify-between">
         <span>Downloads</span>
         <span className="text-xs text-[#555] font-normal">
@@ -78,21 +78,21 @@ function Downloads() {
                   </p>
                 )}
                 <p className="line-clamp-2 text-base tracking-tight">{e.name}</p>
-                <div className="my-2 ml-1 grid grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-x-4 gap-y-2">
-                  <p className="flex w-40 items-center justify-start gap-x-2 text-sm">
+                <div className="my-2 ml-1 grid grid-cols-2 gap-x-2 gap-y-2 sm:grid-cols-[repeat(auto-fit,minmax(190px,1fr))]">
+                  <p className="flex items-center justify-start gap-x-2 text-sm">
                     {formatBytes(e.downloadSpeed ?? 0)}/s <ArrowDownIcon />
                   </p>
-                  <p className="flex w-40 items-center justify-start gap-x-2 text-sm">
+                  <p className="flex items-center justify-start gap-x-2 text-sm">
                     {formatBytes(e.uploadSpeed ?? 0)}/s <ArrowUpIcon />
                   </p>
-                  <p className="flex w-48 items-center justify-start gap-x-2 text-sm">
-                    {((e.progress ?? 0) * 100).toFixed(2)}% Completed
+                  <p className="flex items-center justify-start gap-x-2 text-sm">
+                    {((e.progress ?? 0) * 100).toFixed(2)}% Done
                   </p>
-                  <p className="flex w-48 items-center justify-start gap-x-2 text-sm">
-                    {formatBytes(e.downloaded ?? 0)} Downloaded
+                  <p className="flex items-center justify-start gap-x-2 text-sm">
+                    {formatBytes(e.downloaded ?? 0)} ↓
                   </p>
-                  <p className="flex w-48 items-center justify-start gap-x-2 text-sm">
-                    {formatBytes(e.uploaded ?? 0)} Uploaded
+                  <p className="flex items-center justify-start gap-x-2 text-sm">
+                    {formatBytes(e.uploaded ?? 0)} ↑
                   </p>
                 </div>
                 <div className="downloadProgressBar h-1 w-full bg-gray-600">

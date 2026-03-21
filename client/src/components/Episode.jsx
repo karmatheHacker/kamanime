@@ -197,7 +197,7 @@ export default function Episode({
                 className="group flex animate-fade-down cursor-pointer flex-col gap-y-1 border-2 border-[#2c2d3c] bg-[#111113] px-2 py-2 transition-all duration-150 ease-in-out animate-duration-500 hover:border-[#c084fc90]" //0f1012
                 onClick={() => onTorrentClick(torrent)}
               >
-                <div className="mr-1 flex min-w-32 items-center gap-x-4 p-1">
+                <div className="mr-1 flex flex-wrap items-center gap-x-3 gap-y-1 p-1">
                   <div className="flex items-center gap-x-1">
                     <p className="font-space-mono text-xs opacity-60">
                       {nFormatter(torrent.seeders)}

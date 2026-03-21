@@ -194,7 +194,7 @@ export default function AnimePage() {
           />
         </div>
       )}
-      <div className="z-30 mx-auto animate-fade px-6 py-4 lg:container">
+      <div className="z-30 mx-auto animate-fade px-3 py-4 sm:px-6 lg:container">
         <div className="flex flex-col gap-y-4 lg:flex-row lg:justify-between lg:gap-x-7">
           <img
             src={data?.coverImage.extraLarge}
@@ -209,7 +209,7 @@ export default function AnimePage() {
               {data?.title.english}
               {data?.title?.native ? ` • ${data?.title?.native}` : ''}
             </p>
-            <div className="mb-2 flex w-fit items-center gap-x-2 border-b border-[#545454] pb-2 text-xs text-gray-300">
+            <div className="mb-2 flex w-fit flex-wrap items-center gap-x-2 gap-y-1 border-b border-[#545454] pb-2 text-xs text-gray-300">
               <p className="">{data?.format}</p>
               <div className="h-5 w-[1px] bg-[#333]"></div>
               <p>{`${data?.episodes ? data?.episodes : '?'} episodes`}</p>
@@ -303,7 +303,7 @@ export default function AnimePage() {
                 className="my-2 h-fit cursor-pointer transition-all duration-200 ease-in-out"
                 onClick={() => navigate(`/anime/${relation?.node?.id}`)}
               >
-                <div className="flex w-[25rem] font-space-mono text-xs text-[#dcdcdc]">
+                <div className="flex w-full font-space-mono text-xs text-[#dcdcdc]">
                   <Skeleton
                     style={{
                       borderRadius: '0rem'

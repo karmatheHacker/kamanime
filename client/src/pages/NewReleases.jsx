@@ -60,11 +60,11 @@ export default function NewReleases() {
   }
 
   return (
-    <div className="p-12">
+    <div className="p-3 sm:p-12">
       <div className="border-b border-gray-700 pb-3 font-space-mono text-lg tracking-wider">
         New Releases
       </div>
-      <div className="grid animate-fade grid-cols-4">
+      <div className="grid animate-fade grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
         {displayedReleases.map((release) => (
           <NewReleaseCard
             key={release.title}
