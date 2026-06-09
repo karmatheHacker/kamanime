@@ -14,8 +14,6 @@ import {
 } from './api'
 import { parseStringPromise } from 'xml2js'
 
-const token = localStorage.getItem('anilist_token')
-
 import * as Comlink from 'comlink'
 const worker = new Worker(new URL('../workers/worker.js', import.meta.url), {
   type: 'module'
@@ -167,6 +165,7 @@ export async function getTopAiringAnime() {
   `
 
   try {
+    const token = localStorage.getItem('anilist_token')
     const headers = {
       'Content-Type': 'application/json',
       Accept: 'application/json'
@@ -219,6 +218,7 @@ export async function getTopAnime(page = 1) {
   `
 
   try {
+    const token = localStorage.getItem('anilist_token')
     const headers = {
       'Content-Type': 'application/json',
       Accept: 'application/json'
@@ -271,6 +271,7 @@ export async function getAnimeById(id) {
   `
 
   try {
+    const token = localStorage.getItem('anilist_token')
     const headers = {
       'Content-Type': 'application/json',
       Accept: 'application/json'
@@ -525,6 +526,7 @@ export async function getNewReleases(packer = '[SubsPlease]') {
 /* ------------------------------------------------------ */
 
 export async function setWatchedEpisodes(animeId, episodesWatched) {
+  const token = localStorage.getItem('anilist_token')
   if (!token) {
     throw new Error('User is not authenticated. Please log in to update episode data on AniList.')
   }
@@ -589,6 +591,7 @@ export async function getToshoEpisodes(quality, aids, eids) {
 }
 
 export async function setAnimeStatus(animeId, status) {
+  const token = localStorage.getItem('anilist_token')
   if (!token) {
     throw new Error('User is not authenticated. Please log in to update anime status on AniList.')
   }
@@ -672,6 +675,7 @@ export async function searchAnilist(searchObject, page = 1, perPage = 30) {
   }
 
   try {
+    const token = localStorage.getItem('anilist_token')
     const headers = {
       'Content-Type': 'application/json',
       Accept: 'application/json'
