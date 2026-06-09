@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/kamanime-logo.png">
+    <title>Kamanime</title>
+    <script>
+      // AniList OAuth redirects to /auth/callback%20%20 if the registered
+      // redirect URL has trailing spaces. Fix it before React mounts.
+      (function () {
+        var p = window.location.pathname;
+        if (p !== '/auth/callback' && /^\/auth\/callback(\s|%20)+$/.test(p)) {
+          window.location.replace('/auth/callback' + window.location.hash);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
